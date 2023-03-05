@@ -15,7 +15,7 @@ WORKER_NODES_COUNT  = 2
 Vagrant.configure(2) do |config|
 
   config.vm.provision "shell", path: "bootstrap.sh"
-
+  config.vm.synced_folder ".", "/vagrant"
   # Kubernetes Master Server
   config.vm.define "kmaster" do |node|
   
